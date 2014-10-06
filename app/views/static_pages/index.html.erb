@@ -2,6 +2,7 @@
 	<h1>What do you want for your dogecoin?</h1>
 	<input type="text" id="form" placeholder="Steam gift cards" data-autosize-input='{ "space": 40 }'>
 	<input type="submit" id="submit" value="Submit" onclick="submit();">
+	<h1>We'll be live at StartupWow.com shortly...</h1>
 	<!-- <div class="container">
 		<div class="alert alert-success">Got it! Thanks for your thoughts. Feel free to add another suggestion if you want.</div>
 	</div> -->
@@ -13,7 +14,7 @@
 		if ($('#form').val().length != 0) {
 
 			var idea = $('#form').val()
-			var timestamp = new Date($.now());
+			var timestamp = new Date($.now()).toString();
 			fb.push({ idea: idea, timestamp: timestamp });
 			$('#form').val("");
 			$('#submit').notify("Got it! Thanks for your thoughts. Feel free to add another suggestion if you want.", "success")
