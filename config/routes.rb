@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :admins
   resources :cards
+
+  # get 'cards' => 'cards#index', :as => :cards
+  # get '/cards/new(.:format)' => 'cards#new', :as => :new_card
+  # get '/cards/:id/edit(.:format)' => 'cards#edit', :as => :edit_card
+  # put '/cards/:id(.:format)' => 'cards#update'
+  # delete '/cards/:id(.:format)' =>'cards#destroy'
+  # post 'cards(.:format)' => 'cards#create'
 
   root 'static_pages#index'
 
