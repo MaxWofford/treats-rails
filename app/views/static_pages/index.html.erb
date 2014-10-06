@@ -12,7 +12,7 @@
 	function submit() {
 		var idea = $('#form').val()
 		var timestamp = new Date($.now());
-		fb.set({ idea: idea, timestamp: timestamp });
+		fb.push({ idea: idea, timestamp: timestamp });
 		$('#form').val("");
 		$('#submit').notify("Got it! Thanks for your thoughts. Feel free to add another suggestion if you want.", "success")
 	}
