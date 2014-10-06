@@ -10,10 +10,15 @@
 <script>
 	var fb = new Firebase("https://doge-ideas.firebaseio.com");
 	function submit() {
-		var idea = $('#form').val()
-		var timestamp = new Date($.now());
-		fb.push({ idea: idea, timestamp: timestamp });
-		$('#form').val("");
-		$('#submit').notify("Got it! Thanks for your thoughts. Feel free to add another suggestion if you want.", "success")
+		if ($('#form').val().length != 0) {
+
+			var idea = $('#form').val()
+			var timestamp = new Date($.now());
+			fb.push({ idea: idea, timestamp: timestamp });
+			$('#form').val("");
+			$('#submit').notify("Got it! Thanks for your thoughts. Feel free to add another suggestion if you want.", "success")
+		} else{
+			$('#submit').notify("I don't think there's anything in that form :/")
+		};
 	}
 </script>
